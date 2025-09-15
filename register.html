@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Total Trust Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 120px auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+        .auth-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: 2px solid #ddd;
+        }
+        .auth-tab.active {
+            border-bottom: 2px solid #3498db;
+            color: #3498db;
+        }
+        .auth-form {
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/TTS_Logo_final.jpg" alt="Total Trust Solutions Logo">
+                <h1>Total Trust Solutions</h1>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <div class="auth-tab active" data-tab="login">Login</div>
+            <div class="auth-tab" data-tab="register">Register</div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form active">
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group captcha-box" style="background:#f8f9fa; border:1px solid #ddd; border-radius:8px; padding:1rem; margin-bottom:1rem;">
+                <label id="captchaQuestion">What is 1 + 1?</label>
+                <input type="text" id="loginCaptcha" required style="margin-top:0.5rem;">
+                <div class="error-message"></div>
+            </div>
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label for="registerName">Full Name</label>
+                <input type="text" id="registerName" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="registerPhone">Phone Number</label>
+                <input type="tel" id="registerPhone" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="registerRole">Register As</label>
+                <select id="registerRole" required>
+                    <option value="client">Client</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" required>
+                <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="registerConfirmPassword">Confirm Password</label>
+                <input type="password" id="registerConfirmPassword" required>
+                <div class="error-message"></div>
+            </div>
+            <button type="submit" class="submit-button">Register</button>
+        </form>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</body>
+</html> 

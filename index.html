@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Trust Solutions - Interior Design & Construction Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home" class="logo-link">
+                <img src="images/TTS_Logo_final.jpg" alt="Total Trust Solutions Logo">
+                <h1>Total Trust Solutions</h1>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="register.html" class="auth-button">Login/Register</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-container">
+                <img src="images/cover_img1.jpg" alt="Interior Design 1" class="carousel-image active">
+                <img src="images\3.jpg" alt="Interior Design 2" class="carousel-image">
+                <img src="images\5.webp" alt="Interior Design 3" class="carousel-image">
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Total Trust Solutions</h1>
+            <p>Your Trusted Partner in Interior Design & Construction</p>
+            <a href="#contact" class="cta-button">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-paint-roller"></i>
+                <h3>Interior Design</h3>
+                <p>Professional interior design solutions tailored to your style and needs.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hammer"></i>
+                <h3>Construction</h3>
+                <p>Complete construction services from planning to execution.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-couch"></i>
+                <h3>Furniture</h3>
+                <p>High-quality furniture selection and installation.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>Maintenance</h3>
+                <p>Comprehensive maintenance services for all your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-categories">
+            <div class="category">
+                <div class="category-header">
+                    <i class="fas fa-couch"></i>
+                    <h3>Furniture</h3>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="C:\tts_w\images\furniture.jpeg" alt="Living Room Set">
+                        <h4>Living Room Set</h4>
+                        <p>Modern and comfortable living room furniture</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="C:\tts_w\images\dining.jpeg" alt="Dining Table">
+                        <h4>Dining Table</h4>
+                        <p>Elegant dining room furniture</p>
+                    </div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-header">
+                    <i class="fas fa-tv"></i>
+                    <h3>Appliances</h3>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="C:\tts_w\images\Smart-TV.webp" alt="Smart TV">
+                        <h4>Smart TV</h4>
+                        <p>Latest technology entertainment systems</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="C:\tts_w\images\kitchen.jpg" alt="Kitchen Appliances">
+                        <h4>Kitchen Appliances</h4>
+                        <p>Modern kitchen equipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Total Trust Solutions Limited (TTS), we specialize in creating innovative and functional interior designs tailored for co-working spaces, business offices, and commercial outlets such as cafés, restaurants, and retail stores. With a focus on quality, aesthetics, and efficiency, we bring spaces to life that inspire productivity and reflect the unique identity of each client.</p>
+                <p>Beyond design and architecture, TTS also provides a curated range of furniture, crockery, and IT accessories, offering a one-stop solution for all your workspace setup needs. Our team of experienced designers, architects, and consultants work closely with clients from concept to completion—ensuring every project is delivered with precision, on time, and within budget.</p>
+                <p>Driven by a commitment to trust, transparency, and excellence, TTS stands as a reliable partner in transforming your workspace into a place of purpose and performance.</p>
+                <ul class="achievements">
+                    <li>50+ Completed Projects</li>
+                    <li>100+ Happy Clients</li>
+                    <li>Expert Team Members</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone">
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="design">Interior Design</option>
+                    <option value="construction">Construction</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="maintenance">Maintenance</option>
+                </select>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Get Quote</button>
+            </form>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>123 Mayank Villa , Chikitsak Nagar, Indore - 452010</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 7879382301</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>ttrustsolutions@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Total Trust Solutions</h3>
+                <p>Creating beautiful spaces with trust and excellence since 2024</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/ttrust_solutions?igsh=a2lyZzNhdGoxajM3&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Total Trust Solutions Pvt Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-info">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

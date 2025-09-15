@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Total Trust Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 120px auto 2rem;
+            padding: 0 1rem;
+        }
+        .welcome-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .quotation-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .quotation-history {
+            margin-top: 2rem;
+        }
+        .quotation-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logout-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/TTS_Logo_final.jpg" alt="Total Trust Solutions Logo">
+                <h1>Total Trust Solutions</h1>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="profile-menu" id="profileMenu">
+            <i class="fas fa-user-circle profile-icon" id="profileIcon"></i>
+            <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+                <div class="profile-info">
+                    <span id="profileUserName">User</span>
+                </div>
+                <button id="manageProfileBtn">Manage Profile</button>
+                <button id="logoutBtn">Log Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Manage Profile Modal -->
+    <div id="manageProfileModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal" id="closeProfileModal">&times;</span>
+            <h2>Manage Profile</h2>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="profileName">Name</label>
+                    <input type="text" id="profileName" required>
+                </div>
+                <div class="form-group">
+                    <label for="profileEmail">Email</label>
+                    <input type="email" id="profileEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="profilePhone">Phone</label>
+                    <input type="tel" id="profilePhone" required>
+                </div>
+                <button type="submit" class="submit-button">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="welcome-section">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+            <h2>Welcome, <span id="userName">User</span></h2>
+            <p>Request a quotation for our services or view your quotation history.</p>
+        </div>
+
+        <div class="quotation-form">
+            <h3>Request a Quotation</h3>
+            <form id="quotationForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quotationNumber">Quotation Number</label>
+                        <input type="text" id="quotationNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quotationDate">Date</label>
+                        <input type="date" id="quotationDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerName">Customer Name & Address</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceLocation">Service Location</label>
+                        <input type="text" id="serviceLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPerson">Contact Person Details</label>
+                        <input type="text" id="contactPerson" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Detailed Scope of Work</label>
+                    <table id="scopeTable" style="width:100%; margin-bottom:1rem;">
+                        <thead>
+                            <tr>
+                                <th>Job Description</th>
+                                <th>Brand (optional)</th>
+                                <th>Unit</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="job-desc" required></td>
+                                <td><input type="text" class="brand"></td>
+                                <td><input type="text" class="unit" required></td>
+                                <td><input type="number" class="quantity" required></td>
+                                <td><input type="number" class="rate" required></td>
+                                <td><input type="number" class="amount" readonly></td>
+                                <td><button type="button" class="remove-row">&times;</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" id="addRow">Add Row</button>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sgst">SGST (%)</label>
+                        <input type="number" id="sgst" value="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cgst">CGST (%)</label>
+                        <input type="number" id="cgst" value="9" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="validity">Validity (days)</label>
+                        <input type="number" id="validity" value="15" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">Request Quotation</button>
+            </form>
+        </div>
+
+        <div class="quotation-history">
+            <h3>Your Quotation History</h3>
+            <div id="quotationList">
+                <!-- Quotations will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html> 
